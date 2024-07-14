@@ -1,5 +1,5 @@
 import scrapy
-
+from bookScraper.items import BookscraperItem
 
 class BookspiderSpider(scrapy.Spider):
     name = "bookSpider"
@@ -22,7 +22,6 @@ class BookspiderSpider(scrapy.Spider):
             yield response.follow(book_url, callback=self.parse_book)
 
         next_page = response.css("li.next a::attr(href)").get()
-
         if next_page:
             if "catalogue/" in next_page:
                 next_page_url = "https://books.toscrape.com/" + next_page
@@ -47,14 +46,16 @@ class BookspiderSpider(scrapy.Spider):
 
         for row in rows:
             key = row.css("th::text").get().strip()
-            value = rows.css("td::text").get().strip()
+            value = row.css("td::text").get().strip()
             product_info[key] = value
 
-        yield {
-            "title": title,
-            "price": price,
-            "availability": availability,
-            "rating": rating,
-            "description": description,
-            "product_info": product_info,
-        }
+        bookItems = BookscraperItem()
+
+        bookItems["title"] = title
+        bookItems["price"] = price
+        bookItems["availability"] = availability
+        bookItems["rating"] = rating
+        bookItems["description"] = description
+        bookItems["product_info"] = product_info
+
+        yield bookItems
