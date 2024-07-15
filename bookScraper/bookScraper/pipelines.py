@@ -65,10 +65,6 @@ class SaveToMySQLPipeline:
         self.cursor = self.conn.cursor()
 
         self.cursor.execute("""
-        CREATE DATABASE IF NOT EXISTS books
-        """)
-
-        self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS books(
             id INT NOT NULL auto_increment,
             title TEXT,

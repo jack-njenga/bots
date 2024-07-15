@@ -1,4 +1,4 @@
-import scrapy
+import scrapy, random
 from bookScraper.items import BookscraperItem
 
 class BookspiderSpider(scrapy.Spider):
