@@ -6,11 +6,11 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import mysql.connector, json
 
 
 class BookscraperPipeline:
      def process_item(self, item, spider):
-
         adapter = ItemAdapter(item)
 
         ## Strip all whitespaces from strings
@@ -23,7 +23,6 @@ class BookscraperPipeline:
                 value = adapter.get(field_name)
                 # print(f"===> {field_name} : {value}")
                 adapter[field_name] = value.strip()
-
 
         ## Price --> convert to float
         price_keys = ['price']
@@ -47,7 +46,69 @@ class BookscraperPipeline:
         stars_string = adapter.get('rating')
         split_stars_array = stars_string.split(' ')
         stars_text_value = split_stars_array[0].lower()
-        starts_map = {"zero": 0, "one": 1, "three": 3, "four": 4, "five": 5}
+        starts_map = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5}
         adapter["rating"] = starts_map[stars_text_value]
 
         return item
+     
+
+
+class SaveToMySQLPipeline:
+    def __init__(self, *args, **kwargs):
+        self.conn = mysql.connector.connect(
+            host = "localhost",
+            user = "root",
+            password = "...",
+            database = "books"
+        )
+
+        self.cursor = self.conn.cursor()
+
+        self.cursor.execute("""
+        CREATE DATABASE IF NOT EXISTS books
+        """)
+
+        self.cursor.execute("""
+        CREATE TABLE IF NOT EXISTS books(
+            id INT NOT NULL auto_increment,
+            title TEXT,
+            price DECIMAL,
+            availability INT,
+            rating INT,
+            description TEXT,
+            product_info JSON,
+            PRIMARY KEY (id)
+        )
+        """)
+
+
+    def process_item(self, item, spider):
+        self.cursor.execute(""" insert into books (
+            title,
+            price,
+            availability,
+            rating,
+            description,
+            product_info
+            ) values (
+                %s,
+                %s,
+                %s,
+                %s,
+                %s,
+                %s
+                )""", (
+            item["title"],
+            item["price"],
+            item["availability"],
+            item["rating"],
+            item["description"],
+            json.dumps(item["product_info"])
+        ))
+        self.conn.commit()
+        return item
+
+    
+    def close_spider(self, spider):
+        self.cursor.close()
+        self.conn.close()

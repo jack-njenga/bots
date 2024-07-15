@@ -6,6 +6,12 @@ class BookspiderSpider(scrapy.Spider):
     allowed_domains = ["books.toscrape.com"]
     start_urls = ["https://books.toscrape.com"]
 
+    custom_settings = {
+        "FEEDS": {
+            "new_books_data.json": {"format": "json", "overwite": True}
+        }
+    }
+
     def parse(self, response):
         """
         Scrapes all books
@@ -59,3 +65,4 @@ class BookspiderSpider(scrapy.Spider):
         bookItems["product_info"] = product_info
 
         yield bookItems
+
