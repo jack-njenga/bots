@@ -53,6 +53,7 @@ ROBOTSTXT_OBEY = False
 DOWNLOADER_MIDDLEWARES = {
    "bookScraper.middlewares.BookscraperDownloaderMiddleware": 543,
    "bookScraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
+   "scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk": 725,
    # "rotating_proxies.middlewares.RotatingProxyMiddleware": 610,
    # "rotating_proxies.middlewares.BanDetectionMiddleware": 620,
 }
@@ -101,7 +102,7 @@ FEEDS = {
     "booksdata.json": {"format": "json"}
 }
 
-SCRAPEOPS_API_KEY = '67d28f3f-fa91-420b-9271-fd5855ad09c7' # signup at https://scrapeops.io
+SCRAPEOPS_API_KEY = '...' # signup at https://scrapeops.io
 SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agents'
 SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
 SCRAPEOPS_NUM_RESULTS = 5
@@ -112,3 +113,10 @@ ROTATING_PROXY_LIST = {
     "189.206.175.169",
     "185.215.53.205",
 }
+
+# Proxy APIs Middlewares using "scrapeops.io"
+# pip install scrapeops-scrapy-proxy-sdk
+
+SCRAPEOPS_PROXY_ENABLED = True
+
+
