@@ -53,9 +53,9 @@ ROBOTSTXT_OBEY = False
 DOWNLOADER_MIDDLEWARES = {
    "bookScraper.middlewares.BookscraperDownloaderMiddleware": 543,
    "bookScraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
-   "scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk": 725,
-   # "rotating_proxies.middlewares.RotatingProxyMiddleware": 610,
-   # "rotating_proxies.middlewares.BanDetectionMiddleware": 620,
+#    "scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk": 725,
+#    "rotating_proxies.middlewares.RotatingProxyMiddleware": 610,
+#    "rotating_proxies.middlewares.BanDetectionMiddleware": 620,
 }
 
 # Enable or disable extensions
@@ -118,5 +118,4 @@ ROTATING_PROXY_LIST = {
 # pip install scrapeops-scrapy-proxy-sdk
 
 SCRAPEOPS_PROXY_ENABLED = True
-
 
