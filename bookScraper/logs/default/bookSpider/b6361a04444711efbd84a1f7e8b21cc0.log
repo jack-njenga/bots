@@ -1,0 +1,262 @@
+2024-07-17 17:20:49 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: bookScraper)
+2024-07-17 17:20:49 [scrapy.utils.log] INFO: Versions: lxml 5.2.2.0, libxml2 2.12.6, cssselect 1.2.0, parsel 1.9.1, w3lib 2.0.0, Twisted 24.3.0, Python 3.8.10 (default, Mar 25 2024, 10:42:49) - [GCC 9.4.0], pyOpenSSL 24.1.0 (OpenSSL 3.2.2 4 Jun 2024), cryptography 42.0.8, Platform Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.29
+2024-07-17 17:20:49 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-07-17 17:20:49 [asyncio] DEBUG: Using selector: EpollSelector
+2024-07-17 17:20:49 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2024-07-17 17:20:49 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2024-07-17 17:20:50 [scrapy.extensions.telnet] INFO: Telnet Password: 0b0618583f1e94f3
+2024-07-17 17:20:58 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2024-07-17 17:20:58 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'bookScraper',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'logs/default/bookSpider/b6361a04444711efbd84a1f7e8b21cc0.log',
+ 'NEWSPIDER_MODULE': 'bookScraper.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['bookScraper.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'}
+2024-07-17 17:21:01 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): headers.scrapeops.io:80
+2024-07-17 17:21:02 [urllib3.connectionpool] DEBUG: http://headers.scrapeops.io:80 "GET /v1/browser-headers?api_key=67d28f3f-fa91-420b-9271-fd5855ad09c7&num_results=5 HTTP/11" 301 178
+2024-07-17 17:21:02 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): headers.scrapeops.io:443
+2024-07-17 17:21:03 [urllib3.connectionpool] DEBUG: https://headers.scrapeops.io:443 "GET /v1/browser-headers?api_key=67d28f3f-fa91-420b-9271-fd5855ad09c7&num_results=5 HTTP/11" 200 None
+2024-07-17 17:21:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'bookScraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'bookScraper.middlewares.BookscraperDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-07-17 17:21:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-07-17 17:21:05 [scrapy.middleware] INFO: Enabled item pipelines:
+['bookScraper.pipelines.BookscraperPipeline']
+2024-07-17 17:21:05 [scrapy.core.engine] INFO: Spider opened
+2024-07-17 17:21:05 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-07-17 17:21:05 [bookSpider] INFO: Spider opened: bookSpider
+2024-07-17 17:21:05 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-07-17 17:21:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://books.toscrape.com> (referer: None)
+2024-07-17 17:21:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html> (referer: https://books.toscrape.com)
+2024-07-17 17:21:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html>
+{'availability': 22,
+ 'description': "It's hard to imagine a world without A Light in the Attic. "
+                'This now-classic collection of poetry and drawings from Shel '
+                'Silverstein celebrates its 20th anniversary with this special '
+                "edition. Silverstein's humorous and creative verse can amuse "
+                'the dowdiest of readers. Lemon-faced adults and fidgety kids '
+                'sit still and read these rhythmic words and laugh and smile '
+                "and love th It's hard to imagine a world without A Light in "
+                'the Attic. This now-classic collection of poetry and drawings '
+                'from Shel Silverstein celebrates its 20th anniversary with '
+                "this special edition. Silverstein's humorous and creative "
+                'verse can amuse the dowdiest of readers. Lemon-faced adults '
+                'and fidgety kids sit still and read these rhythmic words and '
+                'laugh and smile and love that Silverstein. Need proof of his '
+                "genius? RockabyeRockabye baby, in the treetopDon't you know a "
+                'treetopIs no safe place to rock?And who put you up there,And '
+                "your cradle, too?Baby, I think someone down here'sGot it in "
+                'for you. Shel, you never sounded so good. ...more',
+ 'price': 51.77,
+ 'product_info': {'Availability': 'In stock (22 available)',
+                  'Number of reviews': '0',
+                  'Price (excl. tax)': '£51.77',
+                  'Price (incl. tax)': '£51.77',
+                  'Product Type': 'Books',
+                  'Tax': '£0.00',
+                  'UPC': 'a897fe39b1053632'},
+ 'rating': 3,
+ 'title': 'A Light in the Attic'}
+2024-07-17 17:21:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://books.toscrape.com/catalogue/soumission_998/index.html> (referer: https://books.toscrape.com)
+2024-07-17 17:21:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://books.toscrape.com/catalogue/sapiens-a-brief-history-of-humankind_996/index.html> (referer: https://books.toscrape.com)
+2024-07-17 17:21:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html> (referer: https://books.toscrape.com)
+2024-07-17 17:21:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://books.toscrape.com/catalogue/soumission_998/index.html>
+{'availability': 20,
+ 'description': 'Dans une France assez proche de la nôtre, un homme s’engage '
+                'dans la carrière universitaire. Peu motivé par '
+                'l’enseignement, il s’attend à une vie ennuyeuse mais calme, '
+                'protégée des grands drames historiques. Cependant les forces '
+                'en jeu dans le pays ont fissuré le système politique jusqu’à '
+                'provoquer son effondrement. Cette implosion sans soubresauts, '
+                'sans vraie révolution, s Dans une France assez proche de la '
+                'nôtre, un homme s’engage dans la carrière universitaire. Peu '
+                'motivé par l’enseignement, il s’attend à une vie ennuyeuse '
+                'mais calme, protégée des grands drames historiques. Cependant '
+                'les forces en jeu dans le pays ont fissuré le système '
+                'politique jusqu’à provoquer son effondrement. Cette implosion '
+                'sans soubresauts, sans vraie révolution, se développe comme '
+                'un mauvais rêve.Le talent de l’auteur, sa force visionnaire '
+                'nous entraînent sur un terrain ambigu et glissant ; son '
+                'regard sur notre civilisation vieillissante fait coexister '
+                'dans ce roman les intuitions poétiques, les effets comiques, '
+                'une mélancolie fataliste.Ce livre est une saisissante fable '
+                'politique et morale. ...more',
+ 'price': 50.1,
+ 'product_info': {'Availability': 'In stock (20 available)',
+                  'Number of reviews': '0',
+                  'Price (excl. tax)': '£50.10',
+                  'Price (incl. tax)': '£50.10',
+                  'Product Type': 'Books',
+                  'Tax': '£0.00',
+                  'UPC': '6957f44c3847a760'},
+ 'rating': 1,
+ 'title': 'Soumission'}
+2024-07-17 17:21:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://books.toscrape.com/catalogue/sharp-objects_997/index.html> (referer: https://books.toscrape.com)
+2024-07-17 17:21:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://books.toscrape.com/catalogue/sapiens-a-brief-history-of-humankind_996/index.html>
+{'availability': 20,
+ 'description': 'From a renowned historian comes a groundbreaking narrative of '
+                'humanity’s creation and evolution—a #1 international '
+                'bestseller—that explores the ways in which biology and '
+                'history have defined us and enhanced our understanding of '
+                'what it means to be “human.”One hundred thousand years ago, '
+                'at least six different species of humans inhabited Earth. Yet '
+                'today there is only one—h From a renowned historian comes a '
+                'groundbreaking narrative of humanity’s creation and '
+                'evolution—a #1 international bestseller—that explores the '
+                'ways in which biology and history have defined us and '
+                'enhanced our understanding of what it means to be “human.”One '
+                'hundred thousand years ago, at least six different species of '
+                'humans inhabited Earth. Yet today there is only one—homo '
+                'sapiens. What happened to the others? And what may happen to '
+                'us?Most books about the history of humanity pursue either a '
+                'historical or a biological approach, but Dr. Yuval Noah '
+                'Harari breaks the mold with this highly original book that '
+                'begins about 70,000 years ago with the appearance of modern '
+                'cognition. From examining the role evolving humans have '
+                'played in the global ecosystem to charting the rise of '
+                'empires, Sapiens integrates history and science to reconsider '
+                'accepted narratives, connect past developments with '
+                'contemporary concerns, and examine specific events within the '
+                'context of larger ideas.Dr. Harari also compels us to look '
+                'ahead, because over the last few decades humans have begun to '
+                'bend laws of natural selection that have governed life for '
+                'the past four billion years. We are acquiring the ability to '
+                'design not only the world around us, but also ourselves. '
+                'Where is this leading us, and what do we want to '
+                'become?Featuring 27 photographs, 6 maps, and 25 '
+                'illustrations/diagrams, this provocative and insightful work '
+                'is sure to spark debate and is essential reading for '
+                'aficionados of Jared Diamond, James Gleick, Matt Ridley, '
+                'Robert Wright, and Sharon Moalem. ...more',
+ 'price': 54.23,
+ 'product_info': {'Availability': 'In stock (20 available)',
+                  'Number of reviews': '0',
+                  'Price (excl. tax)': '£54.23',
+                  'Price (incl. tax)': '£54.23',
+                  'Product Type': 'Books',
+                  'Tax': '£0.00',
+                  'UPC': '4165285e1663650f'},
+ 'rating': 5,
+ 'title': 'Sapiens: A Brief History of Humankind'}
+2024-07-17 17:21:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html>
+{'availability': 20,
+ 'description': '"Erotic and absorbing...Written with starling power."--"The '
+                'New York Times Book Review " Nan King, an oyster girl, is '
+                'captivated by the music hall phenomenon Kitty Butler, a male '
+                'impersonator extraordinaire treading the boards in '
+                'Canterbury. Through a friend at the box office, Nan manages '
+                'to visit all her shows and finally meet her heroine. Soon '
+                'after, she becomes Kitty\'s "Erotic and absorbing...Written '
+                'with starling power."--"The New York Times Book Review " Nan '
+                'King, an oyster girl, is captivated by the music hall '
+                'phenomenon Kitty Butler, a male impersonator extraordinaire '
+                'treading the boards in Canterbury. Through a friend at the '
+                'box office, Nan manages to visit all her shows and finally '
+                "meet her heroine. Soon after, she becomes Kitty's dresser and "
+                'the two head for the bright lights of Leicester Square where '
+                'they begin a glittering career as music-hall stars in an '
+                'all-singing and dancing double act. At the same time, behind '
+                'closed doors, they admit their attraction to each other and '
+                'their affair begins. ...more',
+ 'price': 53.74,
+ 'product_info': {'Availability': 'In stock (20 available)',
+                  'Number of reviews': '0',
+                  'Price (excl. tax)': '£53.74',
+                  'Price (incl. tax)': '£53.74',
+                  'Product Type': 'Books',
+                  'Tax': '£0.00',
+                  'UPC': '90fa61229261140a'},
+ 'rating': 1,
+ 'title': 'Tipping the Velvet'}
+2024-07-17 17:21:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://books.toscrape.com/catalogue/sharp-objects_997/index.html>
+{'availability': 20,
+ 'description': 'WICKED above her hipbone, GIRL across her heart Words are '
+                'like a road map to reporter Camille Preaker’s troubled past. '
+                'Fresh from a brief stay at a psych hospital, Camille’s first '
+                'assignment from the second-rate daily paper where she works '
+                'brings her reluctantly back to her hometown to cover the '
+                'murders of two preteen girls. NASTY on her kneecap, BABYDOLL '
+                'on her leg Since WICKED above her hipbone, GIRL across her '
+                'heart Words are like a road map to reporter Camille Preaker’s '
+                'troubled past. Fresh from a brief stay at a psych hospital, '
+                'Camille’s first assignment from the second-rate daily paper '
+                'where she works brings her reluctantly back to her hometown '
+                'to cover the murders of two preteen girls. NASTY on her '
+                'kneecap, BABYDOLL on her leg Since she left town eight years '
+                'ago, Camille has hardly spoken to her neurotic, hypochondriac '
+                'mother or to the half-sister she barely knows: a beautiful '
+                'thirteen-year-old with an eerie grip on the town. Now, '
+                'installed again in her family’s Victorian mansion, Camille is '
+                'haunted by the childhood tragedy she has spent her whole life '
+                'trying to cut from her memory. HARMFUL on her wrist, WHORE on '
+                'her ankle As Camille works to uncover the truth about these '
+                'violent crimes, she finds herself identifying with the young '
+                'victims—a bit too strongly. Clues keep leading to dead ends, '
+                'forcing Camille to unravel the psychological puzzle of her '
+                'own past to get at the story. Dogged by her own demons, '
+                'Camille will have to confront what happened to her years '
+                'before if she wants to survive this homecoming.With its taut, '
+                'crafted writing, Sharp Objects is addictive, haunting, and '
+                'unforgettable. ...more',
+ 'price': 47.82,
+ 'product_info': {'Availability': 'In stock (20 available)',
+                  'Number of reviews': '0',
+                  'Price (excl. tax)': '£47.82',
+                  'Price (incl. tax)': '£47.82',
+                  'Product Type': 'Books',
+                  'Tax': '£0.00',
+                  'UPC': 'e00eb4fd7b871a48'},
+ 'rating': 4,
+ 'title': 'Sharp Objects'}
+2024-07-17 17:21:08 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-07-17 17:21:08 [scrapy.extensions.feedexport] INFO: Stored json feed (5 items) in: new_books_data.json
+2024-07-17 17:21:08 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 3770,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/GET': 6,
+ 'downloader/response_bytes': 117360,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/200': 6,
+ 'elapsed_time_seconds': 3.028493,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 7, 17, 14, 21, 8, 538841, tzinfo=datetime.timezone.utc),
+ 'item_scraped_count': 5,
+ 'log_count/DEBUG': 18,
+ 'log_count/INFO': 12,
+ 'memusage/max': 66916352,
+ 'memusage/startup': 66916352,
+ 'request_depth_max': 1,
+ 'response_received_count': 6,
+ 'scheduler/dequeued': 6,
+ 'scheduler/dequeued/memory': 6,
+ 'scheduler/enqueued': 6,
+ 'scheduler/enqueued/memory': 6,
+ 'start_time': datetime.datetime(2024, 7, 17, 14, 21, 5, 510348, tzinfo=datetime.timezone.utc)}
+2024-07-17 17:21:08 [scrapy.core.engine] INFO: Spider closed (finished)

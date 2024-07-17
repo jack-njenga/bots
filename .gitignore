@@ -2,3 +2,6 @@ env1/
 bookScraper/bookdata.csv
 bookScraper/booksdata.json
 bookScraper/new_books_data.json
+bookScraper/bookScraper/booksdata.json
+bookScraper/bookScraper/new_books_data.json
+bookScraper/build

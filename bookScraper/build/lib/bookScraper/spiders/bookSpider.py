@@ -28,7 +28,9 @@ class BookspiderSpider(scrapy.Spider):
         Scrapes all books
         """
         books = response.css("article.product_pod")
+        books = books[0:5]
 
+        print(f"\n\n\n\t{'*'*10} Length of books : {len(books)} {'*'*10}\n\n\n")
         for book in books:
             book_url = book.css('h3 a::attr(href)').get()
 
@@ -46,7 +48,7 @@ class BookspiderSpider(scrapy.Spider):
             else:
                 next_page_url = "https://books.toscrape.com/catalogue/" + next_page
             # next_page_url = get_proxy_url(next_page_url)         
-            yield response.follow(next_page_url, callback=self.parse)
+            # yield response.follow(next_page_url, callback=self.parse)
 
 
     def parse_book(self, response):

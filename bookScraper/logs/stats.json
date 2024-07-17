@@ -1,6 +1,59 @@
 {
     "status": "ok",
-    "datas": {},
+    "datas": {
+        "default": {
+            "bookSpider": {
+                "05f9fa1e443f11efbd84a1f7e8b21cc0": {
+                    "log_path": "/mnt/c/GIT/ME/bots/bookScraper/logs/default/bookSpider/05f9fa1e443f11efbd84a1f7e8b21cc0.log",
+                    "json_path": "/mnt/c/GIT/ME/bots/bookScraper/logs/default/bookSpider/05f9fa1e443f11efbd84a1f7e8b21cc0.json",
+                    "json_url": "http://127.0.0.1:6800/logs/default/bookSpider/05f9fa1e443f11efbd84a1f7e8b21cc0.json",
+                    "size": 17994,
+                    "position": 17994,
+                    "status": "ok",
+                    "pages": 6,
+                    "items": 5,
+                    "first_log_time": "2024-07-17 16:18:35",
+                    "latest_log_time": "2024-07-17 16:18:54",
+                    "runtime": "0:00:19",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "finished",
+                    "last_update_time": "2024-07-17 17:26:08"
+                },
+                "b6361a04444711efbd84a1f7e8b21cc0": {
+                    "log_path": "/mnt/c/GIT/ME/bots/bookScraper/logs/default/bookSpider/b6361a04444711efbd84a1f7e8b21cc0.log",
+                    "json_path": "/mnt/c/GIT/ME/bots/bookScraper/logs/default/bookSpider/b6361a04444711efbd84a1f7e8b21cc0.json",
+                    "json_url": "http://127.0.0.1:6800/logs/default/bookSpider/b6361a04444711efbd84a1f7e8b21cc0.json",
+                    "size": 17993,
+                    "position": 17993,
+                    "status": "ok",
+                    "pages": 6,
+                    "items": 5,
+                    "first_log_time": "2024-07-17 17:20:49",
+                    "latest_log_time": "2024-07-17 17:21:08",
+                    "runtime": "0:00:19",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "finished",
+                    "last_update_time": "2024-07-17 17:26:08"
+                },
+                "2024-07-17T17_30_05": {
+                    "log_path": "/mnt/c/GIT/ME/bots/bookScraper/logs/default/bookSpider/2024-07-17T17_30_05.log",
+                    "json_path": "/mnt/c/GIT/ME/bots/bookScraper/logs/default/bookSpider/2024-07-17T17_30_05.json",
+                    "json_url": "http://127.0.0.1:6800/logs/default/bookSpider/2024-07-17T17_30_05.json",
+                    "size": 17982,
+                    "position": 17982,
+                    "status": "ok",
+                    "pages": 6,
+                    "items": 5,
+                    "first_log_time": "2024-07-17 17:30:35",
+                    "latest_log_time": "2024-07-17 17:30:54",
+                    "runtime": "0:00:19",
+                    "shutdown_reason": "N/A",
+                    "finish_reason": "finished",
+                    "last_update_time": "2024-07-17 17:31:01"
+                }
+            }
+        }
+    },
     "settings_py": "/mnt/c/GIT/ME/bots/env1/lib/python3.8/site-packages/logparser/settings.py",
     "settings": {
         "scrapyd_server": "127.0.0.1:6800",
@@ -21,9 +74,9 @@
         "delete_existing_json_files_at_startup": false,
         "keep_data_in_memory": false,
         "verbose": false,
-        "main_pid": 6975
+        "main_pid": 12281
     },
-    "last_update_timestamp": 1721202980,
-    "last_update_time": "2024-07-17 10:56:20",
+    "last_update_timestamp": 1721226905,
+    "last_update_time": "2024-07-17 17:35:05",
     "logparser_version": "0.8.2"
 }
